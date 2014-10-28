@@ -1,0 +1,12 @@
+{application, riakhttpc_wrapper,
+ [
+  {description, "Wrapper for erlang riak http client"},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  ibrowse
+                 ]},
+  {env, []}
+ ]}.
