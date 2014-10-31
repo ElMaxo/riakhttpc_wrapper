@@ -21,14 +21,14 @@ test:
 	$(REBAR) skip_deps=true eunit
 
 console:
-	rel/rtc_adapter_fkv/bin/rtc_adapter_fkv console
+	rel/riakhttpc_wrapper/bin/riakhttpc_wrapper console
 
 rel: 
 	$(REBAR) compile skip_deps=true
 	$(REBAR) generate
 
 relclean:
-	rm -rf rel/rtc_adapter_fkv
+	rm -rf rel/riakhttpc_wrapper
 
 devrel: dev1 dev2 dev3
 
@@ -43,7 +43,7 @@ docs:
 ##
 
 stage : rel
-	$(foreach dep,$(wildcard deps/* wildcard apps/*), rm -rf rel/rtc_adapter_fkv/lib/$(shell basename $(dep))-* && ln -sf $(abspath $(dep)) rel/rtc_adapter_fkv/lib;)
+	$(foreach dep,$(wildcard deps/* wildcard apps/*), rm -rf rel/riakhttpc_wrapper/lib/$(shell basename $(dep))-* && ln -sf $(abspath $(dep)) rel/riakhttpc_wrapper/lib;)
 
 
 stagedevrel: dev1 dev2 dev3
